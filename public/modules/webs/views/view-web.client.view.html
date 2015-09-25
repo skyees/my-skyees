@@ -1,0 +1,18 @@
+<div data-ng-controller="WebsController" data-ng-init="finds()">
+
+
+
+    <ul class="shortone">
+    <span class="glyphicon glyphicon-th-list short-list-icon" ng-mouseover="fine()">
+    <li class="short-list" ng-repeat="web in cartdetails"><a ng-mouseenter="hoverItem('#!/webs',web.detail2,web._id);"  ng-click="hoverItems(web.detail1);" target="_blank">{{web.detail1}}</a></li>
+    </span>
+    </ul>
+
+
+
+    <list></list>
+
+    <div ui-view='you' class="you"> </div>
+
+</div>
+

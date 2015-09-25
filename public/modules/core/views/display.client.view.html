@@ -1,0 +1,6 @@
+<i class="my-class glyphicon glyphicon-arrow"></i>
+    <i ng-init="mineget(item._id)"></i>
+    <i class="glyphicon glyphicon-trash" ng-click="deletewidget($index);"></i>
+
+    <spectrum-colorpicker options='{ preferredFormat:"hex3"}'  ng-model="item.color"></spectrum-colorpicker>
+   <input type="hidden" ng-init="index = $index"  ng-model="index"/>

@@ -1,0 +1,13 @@
+<section data-ng-controller="WebsController">
+	<h4>This is the Menulist</h4>
+
+    <div class="float_center">
+    <ul id="navy" class="clearfix">
+
+        <li ng-repeat="rc in rrclass|orderBy:rc"><a ng-href="#!/webs/{{rc}}"  ng-mouseenter="fine(rc);" ng-mouseleave="fines('raj');"><span>{{rc}} <ul class="sub-navs animate-show"><li ng-repeat="i in webname"><span>{{i.detail1}}</span></li></ul></span></a></li>
+
+
+
+    </ul>
+    </div>
+</section>

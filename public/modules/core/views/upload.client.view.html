@@ -1,0 +1,27 @@
+
+    <form>
+        <img data-ng-src="{{myobjs.image}}" class="thumb">
+        {{welldone}}
+        {{sdata}}
+        {{myobjs.image}}
+        <div class="modal-header">
+            <div class="col-md-10">
+                <h4 class="modal-title"><span class="glyphicon glyphicon-picture"></span> Upload Image</h4>
+            </div>
+            <div class="col-md-2 right">
+                <a class="close" href data-ng-click="$dismiss()"><span class="glyphicon glyphicon-remove"></span></a>
+            </div>
+        </div>
+        <div class="modal-body">
+            <img ng-show="files[0]!= null" ngf-src="files[0]" class="thumb">
+            <progressbar class="progress-striped active" value="progressy"><div ng-if="progressy===100">{{progressy}}%</div></progressbar>
+        </div>
+        <div class="modal-footer center clearfix">
+            <button ngf-select ngf-change="uploady($files);">Submit</button>
+            <button data-ng-click="$dismiss()" type="button" class="btn btn-default pull-left">Cancel</button>
+            <button  class="btn btn-primary pull-right" ng-click="insert()">Insert Image</button>
+            <button ng-file-select class="btn btn-primary pull-right" ng-click="uploady(files);"><span class="glyphicon glyphicon-picture"></span>Upload</button>
+            <input ngf-select type="file" action="/mines"  enctype ="multipart/form-data" name="file" ng-model="files"  data-ngf-multiple="false" class="btn btn-primary pull-right">Upload Image</input>
+{{myurlresult}}
+        </div>
+    </form>

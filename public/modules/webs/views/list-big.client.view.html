@@ -1,0 +1,37 @@
+<section data-ng-controller="WebsController">
+
+    <section class="container-fluid">
+
+    <div slide-source="slide in slides1"  class="slide-viewer taller"  slide-transition="fade" auto-advance="5000"  next-arrow-class="slide-next" previous-arrow-class="slide-previous" control-button-class="icon-ctrl-btn icon-sm-ctrl" control-pin-class="icon-ctrl-pin icon-sm-ctrl" pin-container-class="pin-container" clip-width="134" use-keyboard="true">
+        <div >
+            <div class="container" ng-view>
+
+                    <div gridster="gridsterOpts">
+                        <ul>
+                            <li gridster-item ng-repeat="item in standardItems" style="background-color:{{item.color}}" >
+
+                                <image>
+                                    <a data-ng-href="#!/webs/{{rrclass[($index)+(($parent.$parent.$index)*20+1)]}}">
+                                        <div>
+
+                                            <IMG class="grid-list-image imges" ng-src='{{rclass[($index)+(($parent.$parent.$index)*20+1)].src}}'>
+
+                                        </div>
+
+                                    </a>
+
+                                </image>
+
+                            </li>
+                        </ul>
+                    </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+    </section>
+
+</section>

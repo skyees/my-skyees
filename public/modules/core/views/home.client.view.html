@@ -1,0 +1,79 @@
+<section data-ng-controller="HomeController">
+    <super-size></super-size>
+
+    <div class="jumbotron text-center">
+
+        <div id="page1" class="text-center">
+            <section>
+                <div class="form-group">
+                <form>
+                    <fieldset>
+
+                        <div text-angular ng-model="htmlVariable"></div>
+                        <div ng-bind-html="myHtml"></div>
+
+
+                    </fieldset>
+                    <br>
+                </form>
+
+                </div>
+
+            </section>
+        </div>
+
+        <div class="row">
+
+            <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+			<div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
+				<img alt="MEAN.JS" class="img-responsive text-center" src="modules/core/img/brand/logo.png" />
+			</div>
+        </div>
+
+        <br>
+
+
+
+	</div>
+
+
+    <ul class="draggable-objects">
+
+        <li  ng-repeat="obj in draggableObjects" >
+
+            <div ng-drag="true" ng-drag-data="obj" data-allow-transform="true"> {{obj.name}} </div>
+
+        </li>
+
+    </ul>
+
+
+	<div class="row">
+
+
+
+        <div ng-click="addwidget();">
+            <h2>add</h2>
+        </div>
+        {{positions}}
+        {{myunit}}
+        {{myimages}}
+    </div><slider></slider>
+    <i ng-style="{'background-color':'red'}">{{standardItems}}</i>
+    <div gridster="gridsterOpts">
+        <ul ng-init='finds();'>
+
+            <li display ng-drop="true" ng-drop-success="onDrop($data,$event);"  ng-modal="item"  row="item.row"
+                col="item.col"
+                size-x="item.sizeX"
+                size-y="item.sizeY"
+                class="gridster_li" gridster-item="item" ng-repeat="item in positions"  ng-style="{'background-color':item.color};" >
+                <input type="text"  ng-model="index=$index"/>
+              <i>hello Rajkiran</i>
+            </li>
+
+        </ul>
+    </div>
+
+
+</section>

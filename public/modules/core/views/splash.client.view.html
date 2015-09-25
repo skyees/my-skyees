@@ -1,0 +1,30 @@
+
+    <div class="splash-content text-center">
+        <button  class="btn btn-lg btn-outline" ng-bind="'close'" ng-click="$close()"><i class="glyphicon glyphicon-remove"></i></button>
+
+        <div gridster="gridOpts">
+
+        <ul class="splash_list">
+              <li gridster-item ng-repeat="web in new|filter:searchs">
+
+                  <img  ng-src="{{web.imagefile}}" class="splash_img"   ng-mouseenter="hoverItem('#!/webs',web.detail2,web._id);" ng-click="hoverItems(web.detail1);" ng-mouseleave="hoverOut()">
+
+              </li>
+        </ul>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

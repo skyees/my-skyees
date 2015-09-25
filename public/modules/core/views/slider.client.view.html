@@ -1,0 +1,42 @@
+
+
+    <div  class="row">  <div id="time-indicator" class="col-sm-8"></div></div>
+
+        <div id="viewport"class="row">
+            <div id="box-1" class="box" class="col-sm-8">
+
+                <figure id="slide-{{$index}}" ng-repeat="image in images" class="slide row">
+
+                    <img ng-src="{{image.url}}">
+
+                    </img>
+                </figure>
+            </div>
+
+        </div>
+        <div  class="row">
+            </ln>
+            <div class="col-sm-8">
+                <nav class="slider-controls">
+
+                    <ul id="controls" class="pull-left">
+                        <li><a ng-repeat="image in images"  class="goto-slide slide-animate" scroll-to="#page" offset="-15" container="html, body" ng-click="do($index,event);" href="#" data-slideindex="{{$index}}"></a></li>
+                    </ul>
+
+
+                    <a class="increment-control pull-right slide-animate" scroll-to="#page" offset="-10" container="html, body"id="next" href="#" ng-click="next(event)">
+                        <h5>Next &raquo;</h5>
+                    </a>
+
+                    <a class="increment-control pull-right slide-animate" scroll-to="#page" offset="-10"   ng-click="prev(event)"  id="prev" href="#" >
+                        <h5>&laquo; Prev</h5>
+                    </a>
+
+
+                </nav>
+
+            </div>
+        </div>
+
+    <button class="btn btn-default" ng-click="open('lg',images)">Large modal</button>
+
