@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	db: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://skyees:raj1234@ds055333-a0.mongolab.com:55333,ds055333-a1.mongolab.com:55333/skyees?replicaSet=rs-ds055333',
+	db: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI ||'mongodb://skyees:raj1234@ds055333-a0.mongolab.com:55333,ds055333-a1.mongolab.com:55333/skyeees?replicaSet=rs-ds055333',
 	assets: {
 		lib: {
 			css: [
