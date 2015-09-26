@@ -9,7 +9,7 @@ angular.module('core')
         {
 
             $facebookProvider.setAppId('112819629057770');
-            $facebookProvider.setPermissions("email,user_likes,friends");
+            $facebookProvider.setPermissions('email,user_likes,friends');
             $facebookProvider.setCustomInit({
                 xfbml: true
             });

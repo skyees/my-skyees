@@ -213,7 +213,7 @@ angular.module('core')
         {
 
             $facebookProvider.setAppId('112819629057770');
-            $facebookProvider.setPermissions("email,user_likes,friends");
+            $facebookProvider.setPermissions('email,user_likes,friends');
             $facebookProvider.setCustomInit({
                 xfbml: true
             });
@@ -418,7 +418,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
              };
 
 
-        $scope.$watch(function(scope) { return scope.positions },function(newValue, oldValue) {
+        $scope.$watch(function(scope) { return scope.positions;},function(newValue, oldValue) {
 
             var myunit= Mines.get({mineId:$scope.myid});
 
@@ -467,7 +467,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                 var mine = new Mines ({
 
                 });
-                mine.color=yes;
+                mine.color='#23f3ef';
                 // Redirect after save
                 mine.$save(function(response) {
 
@@ -476,7 +476,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                 });
               }
         });
-$scope.heros='oksir'
+$scope.heros='oksir';
         $scope.standardItems = [
             { sizeX: 2, sizeY: 1, row: 0, col: 0 ,color: '#d9522c'},
             { sizeX: 2, sizeY: 2, row: 0, col: 2 ,color: '#009900'},
@@ -746,7 +746,7 @@ angular.module('core').directive('display',
 
                 $scope.onDrop = function (data,evt) {
 
-                     if(("directive"!==data.name)&&($scope.mydirective[$scope.index]!==data.name)) {
+                     if(('directive'!==data.name)&&($scope.mydirective[$scope.index]!==data.name)) {
                          $scope.mydirective[$scope.index]=data.name;
                          $scope.$apply();
                          $scope.directs = $scope.mydirective;
@@ -969,8 +969,8 @@ angular.module('core').directive('topnav', ['$window',
 
 'use strict';
 
-angular.module('core').factory('Fbservice', ['$q','$rootScope',
-	function($q,$rootScope) {
+angular.module('core').factory('Fbservice', ['$q','$rootScope','$timeout',
+	function($q,$rootScope,$timeout) {
 
         var getMyLastName = function () {
             var deferred = $q.defer();
@@ -993,7 +993,7 @@ angular.module('core').factory('Fbservice', ['$q','$rootScope',
 
         return {
             getMyLastName: getMyLastName
-        }
+        };
 
     }
 ]);

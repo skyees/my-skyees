@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('core').factory('Fbservice', ['$q','$rootScope',
-	function($q,$rootScope) {
+angular.module('core').factory('Fbservice', ['$q','$rootScope','$timeout',
+	function($q,$rootScope,$timeout) {
 
         var getMyLastName = function () {
             var deferred = $q.defer();
@@ -24,7 +24,7 @@ angular.module('core').factory('Fbservice', ['$q','$rootScope',
 
         return {
             getMyLastName: getMyLastName
-        }
+        };
 
     }
 ]);

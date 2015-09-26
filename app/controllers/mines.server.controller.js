@@ -6,6 +6,7 @@
 var mongoose = require('mongoose'),
 	errorHandler = require('./errors.server.controller'),
     Mine = mongoose.model('Mine'),
+    Article=mongoose.model('Article'),
     fs = require('fs'),
     _ = require('lodash');
 
@@ -66,7 +67,7 @@ exports.saveImage = function(req, res) {
                 article: article
             });
         } else {
-            console.log("article saved",article._id);
+            console.log('article saved',article._id);
             // set where the file should actually exists - in this case it is in the "images" directory
             var target_path = './public/img/articles/' +article._id+article.image;
             fs.readFile(req.files.Imagen.path, function (err, data) {
@@ -135,21 +136,23 @@ exports.delete = function(req, res) {
  * List of Mines
  */
 exports.list = function(req, res) {
-	Mine.find({user:req.user.id})
-        .sort('-created').populate({
-            path:'user',
-            match:{_id:req.user.id},
-            select:'displayName',
-            options: { limit: 5 }
-        }).exec(function(err, mines) {
-		if (err) {
-			return res.status(400).send({
-				message: errorHandler.getErrorMessage(err)
-			});
-		} else {
-			res.jsonp(mines);
-		}
-	});
+    if(req.user!==null&&req.user!==0&&req.user!==undefined) {
+        Mine.find({user: req.user.id})
+            .sort('-created').populate({
+                path: 'user',
+                match: {_id: req.user.id},
+                select: 'displayName',
+                options: {limit: 5}
+            }).exec(function (err, mines) {
+                if (err) {
+                    return res.status(400).send({
+                        message: errorHandler.getErrorMessage(err)
+                    });
+                } else {
+                    res.jsonp(mines);
+                }
+            });
+    };
 };
 
 /**

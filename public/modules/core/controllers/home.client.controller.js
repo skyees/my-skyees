@@ -67,7 +67,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
              };
 
 
-        $scope.$watch(function(scope) { return scope.positions },function(newValue, oldValue) {
+        $scope.$watch(function(scope) { return scope.positions;},function(newValue, oldValue) {
 
             var myunit= Mines.get({mineId:$scope.myid});
 
@@ -116,7 +116,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                 var mine = new Mines ({
 
                 });
-                mine.color=yes;
+                mine.color='#23f3ef';
                 // Redirect after save
                 mine.$save(function(response) {
 
@@ -125,7 +125,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                 });
               }
         });
-$scope.heros='oksir'
+$scope.heros='oksir';
         $scope.standardItems = [
             { sizeX: 2, sizeY: 1, row: 0, col: 0 ,color: '#d9522c'},
             { sizeX: 2, sizeY: 2, row: 0, col: 2 ,color: '#009900'},

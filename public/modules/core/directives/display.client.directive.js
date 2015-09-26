@@ -37,7 +37,7 @@ angular.module('core').directive('display',
 
                 $scope.onDrop = function (data,evt) {
 
-                     if(("directive"!==data.name)&&($scope.mydirective[$scope.index]!==data.name)) {
+                     if(('directive'!==data.name)&&($scope.mydirective[$scope.index]!==data.name)) {
                          $scope.mydirective[$scope.index]=data.name;
                          $scope.$apply();
                          $scope.directs = $scope.mydirective;
