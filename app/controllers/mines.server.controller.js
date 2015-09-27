@@ -152,7 +152,7 @@ exports.list = function(req, res) {
                     res.jsonp(mines);
                 }
             });
-    };
+    }
 };
 
 /**
