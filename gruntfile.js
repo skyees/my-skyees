@@ -21,11 +21,6 @@ module.exports = function(grunt) {
 					livereload: true
 				}
 			},
-            scripts:{
-                // other scripts
-                // ...
-                'debug':'grunt debug --file=app.js'
-            },
 			serverJS: {
 				files: watchFiles.serverJS,
 				tasks: ['jshint'],
@@ -162,7 +157,7 @@ module.exports = function(grunt) {
 		grunt.config.set('applicationCSSFiles', config.assets.css);
 	});
 
-    grunt.registerTask('default', ['uglify']);
+
 	// Default task(s).
 	grunt.registerTask('default', ['lint', 'concurrent:default']);
 
